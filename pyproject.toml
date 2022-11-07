@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "juuul"
+version = "0.1.0"
+description = ""
+authors = ["Maureen <maureen@live.no>"]
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.9.7 || >3.9.7,<4.0"
+streamlit = "^1.14.0"
+matplotlib = "^3.6.2"
+pandas = "^1.5.1"
+azure-data-tables = "^12.4.1"
+python-dotenv = "^0.21.0"
+
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
