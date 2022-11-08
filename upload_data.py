@@ -9,7 +9,7 @@ PRODUCT_NAME = u'ELFS'
 
 byrne_elfs = [{
     u'PartitionKey': PRODUCT_NAME,
-    u'ElfName': Snickerdoodle,
+    u'ElfName': "Snickerdoodle",
     u'RowKey': "Louis",
     u'Assigned': "False"
 },{
@@ -39,6 +39,6 @@ if __name__ == '__main__':
     load_dotenv()
     table_service_client = \
         TableServiceClient.from_connection_string(conn_str=os.getenv("CONN_STR"))
-    table_client = table_service_client.get_table_client(table_name="byrneElfs")
+    table_client = table_service_client.get_table_client(table_name="byrneElfsTest")
     for elf in byrne_elfs:
         table_client.create_entity(entity=elf)
