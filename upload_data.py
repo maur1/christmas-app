@@ -39,6 +39,6 @@ if __name__ == '__main__':
     load_dotenv()
     table_service_client = \
         TableServiceClient.from_connection_string(conn_str=os.getenv("CONN_STR"))
-    table_client = table_service_client.get_table_client(table_name="byrneElfsTest")
+    table_client = table_service_client.get_table_client(table_name="prodByrneElfs")
     for elf in byrne_elfs:
         table_client.create_entity(entity=elf)
