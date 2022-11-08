@@ -11,7 +11,7 @@ import random
 load_dotenv()
 # SET_UP
 PRODUCT_NAME = u'ELFS'
-table_client = TableClient.from_connection_string(conn_str=os.getenv("CONN_STR"), table_name="byrneElfsTest")
+table_client = TableClient.from_connection_string(conn_str=os.getenv("CONN_STR"), table_name=os.getenv("ELF_TABLE"))
 
 my_bar = st.progress(0)
 
