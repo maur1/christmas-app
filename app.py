@@ -11,7 +11,7 @@ import random
 load_dotenv()
 # SET_UP
 PRODUCT_NAME = u'ELFS'
-table_client = TableClient.from_connection_string(conn_str=os.getenv("CONN_STR"), table_name="byrneElfs")
+table_client = TableClient.from_connection_string(conn_str=os.getenv("CONN_STR"), table_name="byrneElfsTest")
 
 my_bar = st.progress(0)
 
@@ -46,6 +46,7 @@ if real_name:
             st.error("contact Maureen for more info on how to proceed")
         else:
             with st.spinner('Santa is finding an Elf for you 🎅 hoho'):
+                st.snow()
                 time.sleep(5)
 
             unassigned_elfs = get_list_of_unassinged_elfs(table_client, real_name)
