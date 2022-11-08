@@ -22,7 +22,7 @@ if "visibility" not in st.session_state:
     st.session_state.visibility = "visible"
     st.session_state.disabled = False
 # Add a title and intro text
-st.title("🎅  Byrne Elfs Christmas Wishlist 🎅")
+st.title("🎅 The Byrne Elfs Christmas 🎅")
 st.write("Start by entering your name")
 real_name = st.text_input(
     "Enter yor real name 👨",
@@ -37,7 +37,7 @@ if real_name:
     else:
         st.write("You entered: ", real_name)
         my_bar.progress(50)
-        st.write("Your elf name is:")
+        st.write("Your Elf name is:")
         elf_name= get_elf_name(real_name, table_client)
         st.write(f"🧝 {elf_name} 🧝")
 
@@ -51,12 +51,12 @@ if real_name:
 
             unassigned_elfs = get_list_of_unassinged_elfs(table_client, real_name)
             if not unassigned_elfs:
-                st.error("No more elfs left, contact Maureen for info")
+                st.error("No more Elfs left, contact Maureen for info")
             else:
                 assigned_elf = random.choice(unassigned_elfs)
                 update_elf_assignment(assigned_elf, table_client)
                 update_elf_picked(real_name, assigned_elf, table_client)
 
-                st.write(f"Your elf friend is")
+                st.write(f"Your have to find a gift for Elf friend")
                 st.subheader(f"🧝‍♀ {assigned_elf} 🧝‍")
                 st.snow()
