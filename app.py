@@ -58,5 +58,5 @@ if real_name:
                 update_elf_picked(real_name, assigned_elf, table_client)
 
                 st.write(f"Your elf friend is")
-                st.subheader(f"🧝‍ ♀{assigned_elf} 🧝‍")
+                st.subheader(f"🧝‍♀ {assigned_elf} 🧝‍")
                 st.snow()
