@@ -45,7 +45,6 @@ byrne_elfs = [
 ]
 
 if __name__ == '__main__':
-    print("DO NOT USE")
     load_dotenv()
     table_service_client = \
         TableServiceClient.from_connection_string(conn_str=os.getenv("CONN_STR"))
