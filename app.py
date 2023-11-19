@@ -4,7 +4,7 @@ from azure.data.tables import TableClient
 import os
 import time as time
 from azure_data import get_elf_name, get_list_of_unassinged_elfs, update_elf_assignment, update_elf_picked, \
-    has_elf_picked
+    has_elf_picked, get_assigned_elf
 import random
 
 
@@ -43,7 +43,20 @@ if real_name:
 
         if has_elf_picked(table_client, real_name):
             st.error("🦖🦖🦖You have already picked an Elf 🦖🦖🦖")
-            st.error("contact Maureen for more info on how to proceed")
+            st.error("contact Maureen to retrieve your special elf password and enter it here:")
+            password_in = st.text_input(
+                "✨ Enter special elf password ✨",
+                label_visibility=st.session_state.visibility,
+                disabled=st.session_state.disabled,
+                placeholder="password123",
+                type="password"
+            )
+            assigned_elf = get_assigned_elf(name=real_name, password=password_in, table_client=table_client)
+            if assigned_elf:
+                st.write("Your assigned elf is 🧝")
+                st.write(f"🧝 {assigned_elf} 🧝")
+            else:
+                st.error("🦖🦖🦖Incorrect password🦖🦖🦖")
         else:
             with st.spinner('Santa is finding an Elf for you 🎅 hoho'):
                 st.snow()
@@ -54,6 +67,7 @@ if real_name:
                 st.error("No more Elfs left, contact Maureen for info")
             else:
                 assigned_elf = random.choice(unassigned_elfs)
+                print(assigned_elf)
                 update_elf_assignment(assigned_elf, table_client)
                 update_elf_picked(real_name, assigned_elf, table_client)
 

@@ -1,7 +1,5 @@
 import os
 
-from azure.data.tables import TableServiceClient
-from datetime import datetime
 from dotenv import load_dotenv
 from azure.data.tables import TableClient
 
@@ -51,6 +49,12 @@ def get_elf_name(name: str, table_client: TableClient) -> str:
     entities = table_client.get_entity(partition_key="ELFS", row_key=name)
     return entities["ElfName"]
 
+def get_assigned_elf(name: str, password: str,table_client: TableClient) -> str:
+    entities = table_client.get_entity(partition_key="ELFS", row_key=name)
+    print(entities)
+    if entities["Password"] == password:
+        return entities["AssignedElf"]
+    return None
 
 if __name__ == '__main__':
     load_dotenv()
