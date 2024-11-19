@@ -1,7 +1,7 @@
 import os
-import random
 from dotenv import load_dotenv
 from azure.data.tables import TableClient
+import random
 
 PRODUCT_NAME = u'ELFS'
 
