@@ -1,5 +1,5 @@
 import os
-
+import random
 from dotenv import load_dotenv
 from azure.data.tables import TableClient
 
@@ -15,7 +15,7 @@ def get_list_of_unassinged_elfs(table_client, elf_asking: str):
             not_chosen.remove(elf_asking)
     else:
         not_chosen = None
-    return not_chosen
+    return random.shuffle(not_chosen)
 
 
 def has_elf_picked(table_client, elf_asking: str):
