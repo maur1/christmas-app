@@ -9,17 +9,17 @@ PRODUCT_NAME = u'ELFS'
 byrne_elfs = [
     {
         u'PartitionKey': PRODUCT_NAME,
+        u'ElfName': "Molly Merrybottom",
+        u'RowKey': "Mirjam",
+        u'Password': "Elf_si",
+        u'Assigned': "False"
+    },
+    {
+        u'PartitionKey': PRODUCT_NAME,
         u'ElfName': "Tinsel Twinkle-Toes",
         u'RowKey': "Tara",
         u'Password': "Elf_pi",
         u'Assigned': "False"
-    },
-    {
-    u'PartitionKey': PRODUCT_NAME,
-    u'ElfName': "Lorcan Twinklesprout",
-    u'RowKey': "Louis",
-    u'Password': "Elf_li",
-    u'Assigned': "False"
     },
     {
         u'PartitionKey': PRODUCT_NAME,
@@ -29,18 +29,18 @@ byrne_elfs = [
         u'Assigned': "False"
     },
     {
-    u'PartitionKey': PRODUCT_NAME,
-    u'ElfName': "Maura Merrywhistle",
-    u'RowKey': "Maureen",
-    u'Password': "Elf_ti",
-    u'Assigned': "False"
+        u'PartitionKey': PRODUCT_NAME,
+        u'ElfName': "Maura Merrywhistle",
+        u'RowKey': "Maureen",
+        u'Password': "Elf_ti",
+        u'Assigned': "False"
     },
     {
-    u'PartitionKey': PRODUCT_NAME,
-    u'ElfName': "Molly Merrybottom",
-    u'RowKey': "Mirjam",
-    u'Password': "Elf_si",
-    u'Assigned': "False"
+        u'PartitionKey': PRODUCT_NAME,
+        u'ElfName': "Lorcan Twinklesprout",
+        u'RowKey': "Louis",
+        u'Password': "Elf_li",
+        u'Assigned': "False"
     }
 ]
 
