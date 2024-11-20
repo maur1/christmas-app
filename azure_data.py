@@ -15,7 +15,8 @@ def get_list_of_unassinged_elfs(table_client, elf_asking: str):
             not_chosen.remove(elf_asking)
     else:
         not_chosen = None
-    return random.shuffle(not_chosen)
+    random.shuffle(not_chosen)
+    return not_chosen
 
 
 def has_elf_picked(table_client, elf_asking: str):
