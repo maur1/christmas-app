@@ -67,10 +67,8 @@ if real_name:
                 st.error("No more Elfs left, contact Maureen for info")
             else:
                 assigned_elf = random.choice(unassigned_elfs)
-                print(assigned_elf)
                 update_elf_assignment(assigned_elf, table_client)
                 update_elf_picked(real_name, assigned_elf, table_client)
-
                 st.write(f"Your have to find a gift for Elf friend")
                 st.subheader(f"🧝‍♀ {assigned_elf} 🧝‍")
                 st.snow()
